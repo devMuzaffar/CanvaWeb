@@ -14,6 +14,7 @@ import {
   FAQ,
   Footer,
   SignIn,
+  SignUp,
 } from "./components/index";
 
 import { Routes, Route } from "react-router-dom";
@@ -48,6 +49,7 @@ const App = () => {
 
         <Route path="/" element={<MainSections />} />
         <Route path="/signin" element={<SignIn />} />
+        <Route path="/signup" element={<SignUp />} />
 
       </Routes>
     
