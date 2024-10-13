@@ -8,6 +8,13 @@ import {
 } from "react-icons/lia";
 
 const Testimonial = () => {
+
+  // Background Image for Card
+  const bgImg = "url('./assets/testimonial/background.png')";
+  const bgStyle = {
+    backgroundImage: bgImg,
+  }
+
   return (
     <div className="py-14 px-2 flex flex-col gap-7 sm:px-8 md:px-16">
       {/* Text */}
@@ -28,7 +35,8 @@ const Testimonial = () => {
         {[1, 2].map((img, index) => (
           <div
             key={index}
-            className="bg-[url('./assets/testimonial/background.png')] bg-cover bg-bottom bg-no-repeat rounded-lg drop-shadow-sm flex flex-wrap justify-center p-6 md:shadow-2xl md:flex-nowrap"
+            className="bg-cover bg-bottom bg-no-repeat rounded-lg drop-shadow-sm flex flex-wrap justify-center p-6 md:shadow-2xl md:flex-nowrap"
+            style={bgStyle}
           >
             {/* Left */}
             {/* Image & Icon */}
