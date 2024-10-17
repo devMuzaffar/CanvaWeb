@@ -1,5 +1,6 @@
-"use client"
-import { useState } from "react";
+"use client";
+import { ModalContext } from "@/app/context/modalContext";
+import { useContext, useState } from "react";
 import { IoIosArrowDown } from "react-icons/io";
 import { LuSearch, LuUser2, LuShoppingCart, LuMenu } from "react-icons/lu";
 import Link from "next/link";
@@ -8,6 +9,13 @@ const Navbar = () => {
   const [isMenuOpened, setIsMenuOpened] = useState(false);
   const triggerMenu = () => setIsMenuOpened(!isMenuOpened);
 
+  const { setIsModalOpen } = useContext(ModalContext);
+
+  const openModal = (e) => {
+    e.preventDefault();
+    setIsModalOpen(true);
+  };
+
   return (
     <div className="relative bg-[#F1FCFF]">
       <div className="flex flex-nowrap py-5 justify-between px-4 sm:px-8 md:px-16">
@@ -15,7 +23,9 @@ const Navbar = () => {
         <div className="flex justify-between items-center gap-5">
           {/* Logo */}
           <div>
-            <Link href="/"><img className="w-24 lg:w-32" src="./assets/logo.png" alt="" /></Link>
+            <Link href="/">
+              <img className="w-24 lg:w-32" src="./assets/logo.png" alt="" />
+            </Link>
           </div>
 
           {/* Links */}
@@ -68,7 +78,9 @@ const Navbar = () => {
           {/* Icons */}
           <div className="flex gap-2">
             <LuSearch className="text-gray-500 lg:hidden" size={21} />
-            <Link href='/signin'><LuUser2 className="text-gray-500" size={21} /></Link>
+            <a href="" onClick={openModal}>
+              <LuUser2 className="text-gray-500" size={21} />
+            </a>
             <div className="relative flex">
               <LuShoppingCart className="text-gray-500" size={21} />
               <span className="bg-primary-blue w-2 h-2 rounded-full absolute -right-[3px]" />
@@ -86,11 +98,12 @@ const Navbar = () => {
         {/* MOBILE & TABLET: Right Hamburger Icon & Other Icons */}
         <div
           className="flex items-center justify-center gap-4 md:hidden"
-          onClick={triggerMenu}
         >
           {/* Icons */}
           <div className="flex gap-2 md:hidden">
-          <Link href='/signin'><LuUser2 className="text-gray-500" size={21} /></Link>
+            <a href="/" onClick={openModal}>
+              <LuUser2 className="text-gray-500" size={21} />
+            </a>
             <div className="relative flex">
               <LuShoppingCart className="text-gray-500" size={21} />
               <span className="bg-blue-600 w-2 h-2 rounded-full absolute -right-[3px]" />
@@ -98,7 +111,7 @@ const Navbar = () => {
           </div>
 
           {/* Hamburger Icon */}
-          <div className="flex items-center md:hidden cursor-pointer">
+          <div className="flex items-center md:hidden cursor-pointer" onClick={triggerMenu}>
             <LuMenu size={32} className="text-gray-700" />
           </div>
         </div>
@@ -165,6 +178,6 @@ const Navbar = () => {
       </div>
     </div>
   );
-}
+};
 
 export default Navbar;

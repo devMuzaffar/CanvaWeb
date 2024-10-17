@@ -12,3 +12,4 @@ export {default as Blogs} from './blogs/Blogs';
 export {default as Testimonial} from './testimonial/Testimonial';
 export {default as FAQ} from './faq/FAQ';
 export {default as Footer} from './footer/Footer';
+export {default as UserAccountModal} from './useraccountmodal/UserAccountModal';
