@@ -1,39 +1,12 @@
 import { MdVideoLibrary } from "react-icons/md";
-import { FaUserGraduate } from "react-icons/fa6";
-import { TfiAlarmClock } from "react-icons/tfi";
-import { Ri24HoursFill } from "react-icons/ri";
-import { RiPresentationFill } from "react-icons/ri";
-
-// Features List of Icon Text & Color
-const featuresList = [
-  {
-    icon: <FaUserGraduate className="size-3 md:size-6 lg:size-8" />,
-    text: "Learn Anywhere",
-    color: "text-[#1DA7BC]",
-  },
-  {
-    icon: <TfiAlarmClock className="size-3 md:size-6 lg:size-8" />,
-    text: "Lifetime Access",
-    color: "text-[#31A96B]",
-  },
-  {
-    icon: <Ri24HoursFill className="size-3 md:size-6 lg:size-8" />,
-    text: "24/7 Support",
-    color: "text-[#C9A14A]",
-  },
-  {
-    icon: <RiPresentationFill className="size-3 md:size-6 lg:size-8" />,
-    text: "Expert Instructor",
-    color: "text-[#8629EA]",
-  },
-];
+import featuresList from "./featuresList";
 
 const Landing = () => {
   return (
     <div className="bg-[#F1FCFF]">
       {/* SECTION 1 -- Landing Page */}
-      <div className="flex justify-center items-center h-full py-40 px-4 sm:px-8 sm:py-20 md:py-0 md:h-full md:px-16">
-        {/* Left Text Section */}
+      <div className="flex flex-col justify-center items-center h-full pt-10 gap-10 px-4 sm:flex-row sm:gap-0 sm:pt-0 sm:px-8 sm:py-20 md:py-0 md:h-full md:px-16">
+        {/* Left Text */}
         <div className="flex flex-1 flex-col gap-3 md:gap-5">
           {/* Title */}
           <div>
@@ -73,7 +46,7 @@ const Landing = () => {
         </div>
 
         {/* Right Image */}
-        <div className="flex-1 hidden sm:block">
+        <div className="flex-1">
           <img className="drop-shadow-md" src="./assets/person.webp" alt="" />
         </div>
       </div>

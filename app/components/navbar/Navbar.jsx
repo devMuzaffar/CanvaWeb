@@ -119,8 +119,8 @@ const Navbar = () => {
 
       {/* Mobile & Tablet Menu */}
       <div
-        className={`absolute bg-white transition-all w-full overflow-hidden z-50 ${
-          isMenuOpened ? "h-[calc(100vh-15vh)]" : "h-0"
+        className={`absolute bg-white transition-all w-full overflow-hidden z-50 md:hidden ${
+          isMenuOpened ? "h-[calc(100vh-12vh)] sm:h-[calc(100vh-15vh)]" : "h-0"
         }`}
       >
         {/* Links */}
